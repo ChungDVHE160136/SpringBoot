@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+
+<label>Name</label><input type="text" name ="userName"><a search>Summit</a>
+<h1 style="color:red">This is index page</h1>
+	<input type="button" value="Create new">
+	<a href="showform">Create</a> &nbsp <a href="showAll">Show all users</a><a href="update">Show all users</a>
+	<table class="table table-stripped">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Date of birth</th>
+	</tr>
+	<tr th:each="user:${users}">
+		<td th:text="${user.id}"></td>
+		<td th:text="${user.Name}"></td>
+		<td th:text="${user.Age}"></td>
+		<td th:text="${user.Dob}"></td>
+		<td><a href="#" class = "Primary link">Update</a>&nbsp<a th:href="@{'update/' + ${user.id}}" class= "Danger link">delete</a></td>
+	</tr>
+	
+	
+	</table>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

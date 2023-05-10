@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Update Form</h1>
+	<form th:action="@{/updatee}" th:object="${userinfo}" method="post">
+	<label>ID</label>
+	<input th:value=${user.id} type="text" readonly name="id">
+	<label>Name</label>
+	<input th:value=${user.Name} type="text" name="Name" >
+	<label>Age</label>
+	<input type="number" th:value=${user.Age} name="Age">
+	<label>Dob</label>
+	<input th:value=${user.Dob} type="text" name="Dob">
+	
+	<input type="submit" value="Update">
+	</form>	
+</body>
+</html>
